@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:contentDescription="@string/logo"
+        app:drawableTopCompat="@drawable/logo"
+        />
+    <!-- es drawableTopCompat para que la imagen se centre y aparezca,
+    sino habría que hacer un drawableTop además del  src="drawable/logo" y es menos óptimo-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        tools:listitem="@layout/item_movie"
+        />
+
+
+
+</LinearLayout>
